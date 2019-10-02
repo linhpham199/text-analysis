@@ -18,8 +18,8 @@ describe('analyzing', () => {
 
     const result = {
       textLength: {
-        withSpace: 0,
-        withoutSpace: 0
+        withSpaces: 0,
+        withoutSpaces: 0
       },
       wordCount: 0,
       characterCount: []
@@ -33,8 +33,8 @@ describe('analyzing', () => {
 
     const result = {
       textLength: {
-        withSpace: 5,
-        withoutSpace: 3
+        withSpaces: 5,
+        withoutSpaces: 3
       },
       wordCount: 1,
       characterCount: [
@@ -50,8 +50,8 @@ describe('analyzing', () => {
 
     const result = {
       textLength: {
-        withSpace: 21,
-        withoutSpace: 14
+        withSpaces: 21,
+        withoutSpaces: 14
       },
       wordCount: 4,
       characterCount: [
@@ -68,7 +68,7 @@ describe('analyzing', () => {
     const result = {
       textLength: {
         withSpace: 10,
-        withoutSpace: 9
+        withoutSpaces: 9
       },
       wordCount: 2,
       characterCount: [

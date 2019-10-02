@@ -8,8 +8,8 @@ analyze.post('/', (req, res, next) => {
   if (req.body.text.length >= 0) {
     let response = {
       textLength: {
-        withSpace: null,
-        withoutSpace: null
+        withSpaces: null,
+        withoutSpaces: null
       },
       wordCount: null,
       characterCount: []
@@ -37,8 +37,8 @@ analyze.post('/', (req, res, next) => {
       ...response,
       textLength: {
         ...response.textLength,
-        withSpace: text.length,
-        withoutSpace: text.replace(/\s/g,'').length
+        withSpaces: text.length,
+        withoutSpaces: text.replace(/\s/g,'').length
       },
       wordCount: wordCount(text),
       characterCount: characterCount(text)
