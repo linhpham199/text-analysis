@@ -5,7 +5,7 @@ const analyze = express.Router()
 analyze.post('/', (req, res, next) => {
   console.log(req.body.text)
 
-  if (req.body.text) {
+  if (req.body.text.length >= 0) {
     let response = {
       textLength: {
         withSpace: null,

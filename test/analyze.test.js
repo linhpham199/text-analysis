@@ -11,47 +11,41 @@ const sendRequest = async (input, result) => {
   expect(response).toEqual(expect.objectContaining(result))  
 }
 
-const errorResult = {
-  error: 'Input must be: {text: string}'
-}
-
 describe('analyzing', () => {
-  test('an empty input', () => {
-    const input = {}
-    
-    sendRequest(input, errorResult)
-  })
 
-  test('a wrong input field', () => {
-    const input = {key1: 'value'}
-
-    sendRequest(input, errorResult)
-  })
-
-  test('an empty string', async () => {
+  test('an empty text', async () => {
     const input = {text: ''}
-
-    sendRequest(input, errorResult)
-  })
-
-  test('a normal string', () => {
-    const input = {text: 'Hello haha hehe 2'}
 
     const result = {
       textLength: {
-        withSpace: 17,
-        withoutSpace: 14
+        withSpace: 0,
+        withoutSpace: 0
       },
-      wordCount: 4,
+      wordCount: 0,
+      characterCount: []
+    }
+
+    sendRequest(input, result)
+  })
+
+  test('text with one word', () => {
+    const input = {text: 'Hello'}
+
+    const result = {
+      textLength: {
+        withSpace: 5,
+        withoutSpace: 3
+      },
+      wordCount: 1,
       characterCount: [
-        {H: 1}, {e: 3}, {l: 2}, {o: 1}, {h: 4}, {a: 2}
+        {e: 1}, {h: 1}, {l: 2}, {o: 1}
       ]
     }
 
     sendRequest(input, result)
   })
 
-  test('a string with extra spaces', () => {
+  test('text with trailing spaces', () => {
     const input = {text: '  Hello  haha hehe 2 '}
 
     const result = {
@@ -62,6 +56,23 @@ describe('analyzing', () => {
       wordCount: 4,
       characterCount: [
         {H: 1}, {e: 3}, {l: 2}, {o: 1}, {h: 4}, {a: 2}
+      ]
+    }
+
+    sendRequest(input, result)  
+  })
+
+  test('text with two words', () => {
+    const input = {text: 'Haha, hihi'}
+
+    const result = {
+      textLength: {
+        withSpace: 10,
+        withoutSpace: 9
+      },
+      wordCount: 2,
+      characterCount: [
+        {a: 2}, {h: 4}, {i: 2}
       ]
     }
 
