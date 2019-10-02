@@ -22,7 +22,8 @@ analyze.post('/', (req, res, next) => {
     )
     
     const characterCount = (str) => {
-      const charArray = [...str].filter(char => char.match(/[a-zA-Z]/g))
+      const lowerCaseStr = str.toLowerCase()
+      const charArray = [...lowerCaseStr].filter(char => char.match(/[a-zA-Z]/g)).sort()
       const count = charArray.reduce((result, char) => ({
         ...result,
         [char]: (result[char] || 0) + 1
