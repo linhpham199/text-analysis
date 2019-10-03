@@ -1,3 +1,10 @@
 language: node_js
 node_js:
- - "node"
+  - "node"
+deploy:
+  provider: heroku
+  api_key: 
+    secure: "S4cmM+YWHr91GipyEEQkYj6bldCnF14YoDLOgrprLdvuUwrLlQXV/XGwYu24hlsQJ1UvEEl59nv8K/UGPJYpvyMmyw/hd/EOaatu1ej/OiHsBJKTw0UJ59TDVQsiV6uWP25Evloeoetqsl4paKDS7MSY1652s59wovO0HDQK2pXvb3azrVC6dsXJjtAu3ePQcdcFK5aKaPgY/SM1I1dn/DEXgQDqQTMnkLF9ttOUXlHbAbezE7zffHVg9RKxDkXfKjr8VaNA/H+Susf0Qbptlpvgr6Ka0UjyRzHcWAbpaiZVI7DyaryDiblWf0X6YbZWyezY4WjNk/397yyrRsSfNOcB281qwh0tOuhBpFQ/yQnApXKA4vs2ooLNLzYeciDSiUEGxwfGvGTct4xoixlcK42I55EEuIHY3yrG8sDMRgA1uoITH+V34gkC3MBoSxkj1xFbwiZeq/n49pCZrQ5sOE0epQU7EdQDONxbJ7GhW7DiyGC1n/oSBB1aaOxViRI3Gh5Zz1tebcPbfVAV62yXagyUjHLQMaowbhfCV9w/UnT38MCCe2XNLgwxtW1no2XxL1Gwm+yXdoqA6ynMeq8wYCptx79AFMmZfErQyAzIJ1Ov/wAWlAxbxhP68dofiHfP3ffp0QYTc6+EHtudZWANw78bOdERYA5FKz4005Vlkkg="
+  app: text-analysis-linh
+  on:
+    repo: linhpham199/text-analysis
