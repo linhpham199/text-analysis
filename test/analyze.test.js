@@ -67,7 +67,7 @@ describe('analyzing', () => {
 
     const result = {
       textLength: {
-        withSpace: 10,
+        withSpaces: 10,
         withoutSpaces: 9
       },
       wordCount: 2,
